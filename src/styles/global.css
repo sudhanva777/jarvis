@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './hologram.css';
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body & Root Styles - Iron Man HUD */
+body {
+  font-family: 'Orbitron', 'Oxanium', 'Audiowide', 'Rajdhani', sans-serif;
+  background: #01030a;
+  color: rgba(255, 255, 255, 0.85);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  letter-spacing: 1.8px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Custom Scrollbar - Hidden for no-scroll design */
+.status-log-container::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+/* Right Panel Container - SCROLLABLE */
+.right-panel-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 12px;
+  padding: 0;
+  padding-right: 8px;
+  scrollbar-width: thin; /* Firefox thin bar */
+}
+
+/* Futuristic neon scrollbar for right panel */
+.right-panel-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.right-panel-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.45);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  transition: background 0.2s ease;
+}
+
+.right-panel-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.65);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.9);
+}
+
+.right-panel-container::-webkit-scrollbar-track {
+  background: rgba(0, 20, 40, 0.4);
+  border-radius: 10px;
+}
+
+/* Firefox scrollbar styling */
+.right-panel-container {
+  scrollbar-color: rgba(0, 255, 255, 0.45) rgba(0, 20, 40, 0.4);
+}
+
+.right-panel-container .card,
+.right-panel-container .holo-panel {
+  flex-shrink: 0;
+  min-height: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel-container .section-title,
+.right-panel-container .text-\[0\.65rem\] {
+  flex-shrink: 0;
+}
+
+.brain-settings-panel {
+  flex-shrink: 0;
+  min-height: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Panel Container - SCROLLABLE */
+.left-panel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100vh;
+  padding-right: 8px;
+  scrollbar-width: thin; /* Firefox thin bar */
+}
+
+/* Futuristic neon scrollbar for left panel */
+.left-panel-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.left-panel-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.45);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  transition: background 0.2s ease;
+}
+
+.left-panel-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.65);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.9);
+}
+
+.left-panel-container::-webkit-scrollbar-track {
+  background: rgba(0, 20, 40, 0.4);
+  border-radius: 10px;
+}
+
+/* Firefox scrollbar styling */
+.left-panel-container {
+  scrollbar-color: rgba(0, 255, 255, 0.45) rgba(0, 20, 40, 0.4);
+}
+
+.left-panel-container .holo-panel {
+  flex-shrink: 0;
+  min-height: auto;
+  overflow: visible;
+}
+
+/* Color Variables */
+:root {
+  --cyan-core: #00eaff;
+  --quantum-blue: #16f0ff;
+  --plasma-violet: #a249ff;
+  --hyper-cyan-glow: rgba(0, 255, 255, 0.18);
+  --deep-space: #01030a;
+  --nano-white: rgba(255, 255, 255, 0.85);
+}
+
+/* Text Colors */
+.text-cyan {
+  color: var(--cyan-core);
+}
+
+.text-quantum {
+  color: var(--quantum-blue);
+}
+
+.text-plasma {
+  color: var(--plasma-violet);
+}
+
+/* Background Gradients */
+.bg-deep-space {
+  background: var(--deep-space);
+}
+
+.bg-hologram {
+  background: linear-gradient(135deg, 
+    rgba(1, 3, 10, 0.9) 0%,
+    rgba(0, 30, 60, 0.7) 50%,
+    rgba(1, 3, 10, 0.9) 100%
+  );
+}
+
+/* Holographic Effects */
+.hologram-effect {
+  position: relative;
+  backdrop-filter: blur(18px);
+  background: rgba(1, 3, 10, 0.6);
+  border: 1px solid rgba(0, 234, 255, 0.25);
+  box-shadow: 
+    0 0 20px rgba(0, 234, 255, 0.1),
+    inset 0 0 20px rgba(0, 234, 255, 0.05);
+}
+
+/* Glow Effects */
+.glow-cyan {
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+.glow-quantum {
+  box-shadow: 0 0 15px rgba(22, 240, 255, 0.6);
+}
+
+.glow-plasma {
+  box-shadow: 0 0 20px rgba(162, 73, 255, 0.5);
+}
+
+/* Animation Classes */
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-hologram-flicker {
+  animation: hologram-flicker 4s ease-in-out infinite;
+}
+
+.animate-quantum-pulse {
+  animation: quantum-pulse 3s ease-in-out infinite;
+}
+
+/* Utility Classes */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-oxanium {
+  font-family: 'Oxanium', sans-serif;
+}
+
+.font-audiowide {
+  font-family: 'Audiowide', sans-serif;
+}
+
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}

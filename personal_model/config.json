@@ -1,0 +1,18 @@
+{
+  "vocab_size": 10000,
+  "max_length": 64,
+  "d_model": 128,
+  "num_heads": 4,
+  "num_layers": 2,
+  "ff_dim": 256,
+  "dropout": 0.1,
+  "emotion_labels": ["sad", "angry", "stressed", "happy", "neutral"],
+  "command_labels": ["none", "open_app", "open_folder", "screenshot", "search_files", "play_youtube", "system_control"],
+  "tone_labels": ["very_soft", "soft", "neutral", "slightly_firm"],
+  "learning_rate": 0.0001,
+  "batch_size": 16,
+  "train_steps_per_update": 20,
+  "min_samples_for_training": 20,
+  "max_dataset_size": 2000
+}
+

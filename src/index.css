@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', 'Rajdhani', monospace;
+  background: #000000;
+  color: #ff8c00;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Grid Overlay */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 140, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 140, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Custom scrollbar for status log */
+.status-log-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.status-log-container::-webkit-scrollbar-track {
+  background: rgba(255, 140, 0, 0.1);
+}
+
+.status-log-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 140, 0, 0.5);
+  border-radius: 2px;
+}
+
+.status-log-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 140, 0, 0.7);
+}
+
+/* Keyframe animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.2), inset 0 0 20px rgba(255, 140, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.4), inset 0 0 30px rgba(255, 140, 0, 0.2);
+  }
+}
+
+/* Smooth transitions for progress bars */
+.progress-bar {
+  transition: width 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Panel entrance animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.side-panel {
+  animation: slideIn 0.6s ease-out;
+}
+

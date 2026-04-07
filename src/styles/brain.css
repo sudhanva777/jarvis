@@ -1,0 +1,196 @@
+/* Brain Settings & Inspector Styles */
+.brain-settings-container {
+  background: rgba(20, 10, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid;
+  border-image: linear-gradient(135deg, #ff7ce5, #9d4bff) 1;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 
+    0 8px 32px rgba(255, 124, 229, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.brain-settings-container:hover {
+  box-shadow: 
+    0 12px 40px rgba(255, 124, 229, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-image: linear-gradient(135deg, #ff7ce5, #9d4bff) 1;
+}
+
+.brain-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+}
+
+.brain-header:hover {
+  opacity: 0.9;
+}
+
+.brain-content {
+  margin-top: 0.75rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brain-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 124, 229, 0.1);
+}
+
+.brain-toggle:last-child {
+  border-bottom: none;
+}
+
+.brain-toggle-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.brain-toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 124, 229, 0.3);
+}
+
+.brain-toggle-switch.active {
+  background: linear-gradient(135deg, #ff7ce5, #9d4bff);
+  box-shadow: 0 0 12px rgba(255, 124, 229, 0.5);
+}
+
+.brain-toggle-switch::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.brain-toggle-switch.active::after {
+  left: 24px;
+}
+
+.brain-button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background: rgba(255, 124, 229, 0.1);
+  border: 1px solid rgba(255, 124, 229, 0.3);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.brain-button:hover {
+  background: rgba(255, 124, 229, 0.2);
+  border-color: rgba(255, 124, 229, 0.5);
+  box-shadow: 0 0 12px rgba(255, 124, 229, 0.3);
+}
+
+.brain-button.danger {
+  background: rgba(255, 75, 92, 0.1);
+  border-color: rgba(255, 75, 92, 0.3);
+}
+
+.brain-button.danger:hover {
+  background: rgba(255, 75, 92, 0.2);
+  border-color: rgba(255, 75, 92, 0.5);
+  box-shadow: 0 0 12px rgba(255, 75, 92, 0.3);
+}
+
+.brain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.brain-badge.active {
+  background: linear-gradient(135deg, rgba(255, 124, 229, 0.2), rgba(157, 75, 255, 0.2));
+  color: #ff7ce5;
+  box-shadow: 0 0 8px rgba(255, 124, 229, 0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.brain-badge.offline {
+  background: rgba(128, 128, 128, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 124, 229, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 124, 229, 0.6);
+  }
+}
+
+.brain-inspector-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 124, 229, 0.1);
+}
+
+.brain-inspector-item:last-child {
+  border-bottom: none;
+}
+
+.brain-inspector-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.25rem;
+}
+
+.brain-inspector-value {
+  font-size: 0.75rem;
+  color: #ff7ce5;
+  font-weight: 500;
+}
+
+.brain-inspector-list {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.25rem;
+}
+
+.brain-inspector-list-item {
+  padding: 0.25rem 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+

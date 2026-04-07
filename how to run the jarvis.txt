@@ -1,0 +1,19 @@
+Set-Location "D:\MINI PROJECT\JARVIS\python_agent"
+.\venv\Scripts\activate
+python agent.py
+
+
+
+Set-Location "D:\MINI PROJECT\JARVIS\personal_model"
+.\venv\Scripts\activate
+python personal_model_server.py
+
+
+
+Set-Location "D:\MINI PROJECT\JARVIS\server"
+npm run dev
+
+
+
+Set-Location "D:\MINI PROJECT\JARVIS"
+npm run dev

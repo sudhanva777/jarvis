@@ -1,0 +1,36 @@
+{
+  "models": {
+    "llama3.1": {
+      "name": "llama3.1:8b",
+      "provider": "ollama",
+      "quantization": "q4_0",
+      "max_tokens": 2048,
+      "temperature": 0.7
+    },
+    "gemma2": {
+      "name": "gemma2:2b",
+      "provider": "ollama",
+      "quantization": "q4_0",
+      "max_tokens": 2048,
+      "temperature": 0.7
+    },
+    "phi3": {
+      "name": "phi3:mini",
+      "provider": "ollama",
+      "quantization": "q4_0",
+      "max_tokens": 2048,
+      "temperature": 0.7
+    },
+    "mistral": {
+      "name": "mistral:7b",
+      "provider": "ollama",
+      "quantization": "q4_0",
+      "max_tokens": 2048,
+      "temperature": 0.7
+    }
+  },
+  "default_model": "llama3.1",
+  "use_cuda": true,
+  "gpu_memory_fraction": 0.5
+}
+
